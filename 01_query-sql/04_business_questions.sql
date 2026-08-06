@@ -17,7 +17,7 @@ FROM departments d
 JOIN dept_emp de
 ON d.dept_no = de.dept_no
 GROUP BY d.dept_name
-ORDER BY total_employees ASC;
+ORDER BY total_employees DESC;
 
 -- 3. ¿Qué puestos reciben mejores salarios?
 SELECT t.title, ROUND(AVG(s.salary)) AS average_salary
@@ -25,7 +25,7 @@ FROM titles t
 JOIN salaries s
 ON t.emp_no = s.emp_no
 GROUP BY t.title
-ORDER BY average_salary;
+ORDER BY average_salary DESC;
 
 -- 4. ¿Qué managers administran más personas?
 SELECT dm.emp_no AS manager_id, CONCAT(e.first_name, ' ', e.last_name) AS manager_name, COUNT(de.emp_no) AS total_employees
