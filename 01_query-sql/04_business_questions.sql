@@ -1,3 +1,5 @@
+-- REALIZAMOS PREGUNTAS DE NEGOCIO PARA SOLUCIONAR UN PROBLEMA Y REALIZAMOS SUS KPIS.
+
 -- 1. ¿Qué departamento paga mejor?
 SELECT d.dept_name, ROUND(AVG(s.salary)) AS average_salary
 FROM departments d	
