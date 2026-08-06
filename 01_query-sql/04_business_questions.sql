@@ -8,7 +8,6 @@ ON de.emp_no = s.emp_no
 GROUP BY d.dept_name
 ORDER BY average_salary DESC;
 
-
 -- 2. ¿Qué departamento tiene más empleados?
 SELECT d.dept_name, COUNT(*) AS total_employees
 FROM departments d
@@ -35,5 +34,3 @@ ON dm.dept_no = d.dept_no
 JOIN dept_emp de
 ON dm.dept_no = de.dept_no
 GROUP BY dm.emp_no, CONCAT(e.first_name, ' ', e.last_name) , d.dept_name;
-
--- 5. ¿Qué empleados están por encima del promedio salarial de su área?
