@@ -17,7 +17,7 @@ FROM departments d
 JOIN dept_emp de
 ON d.dept_no = de.dept_no
 GROUP BY d.dept_name
-ORDER BY total_employees DESC;
+ORDER BY total_employees ASC;
 
 -- 3. ¿Qué puestos reciben mejores salarios?
 SELECT t.title, ROUND(AVG(s.salary)) AS average_salary
@@ -36,4 +36,6 @@ JOIN departments d
 ON dm.dept_no = d.dept_no
 JOIN dept_emp de
 ON dm.dept_no = de.dept_no
-GROUP BY dm.emp_no, CONCAT(e.first_name, ' ', e.last_name) , d.dept_name;
+WHERE dm.to_date = '9999-01-01' AND de.to_date = '9999-01-01'
+GROUP BY dm.emp_no, CONCAT(e.first_name, ' ', e.last_name) , d.dept_name
+ORDER BY total_employees DESC;
