@@ -12,8 +12,7 @@ FROM employees
 GROUP BY gender;
 
 -- 4. ¿Cuál es el salario promedio, mínimo y máximo de la empresa?
-SELECT
-    ROUND(AVG(salary),2) AS average_salary,
+SELECT ROUND(AVG(salary),2) AS average_salary,
     MIN(salary) AS minimum_salary,
     MAX(salary) AS maximum_salary
 FROM salaries;
