@@ -1,7 +1,9 @@
+-- ===================================================
 -- OBJETIVO: Limpieza, validación, exploración de datos con SQL y creación de KPIs del dataset 365DS-Practice-Exams-People-Analytics-Dataset.
+-- ===================================================
 
-- 1) Creamos las distintas tablas que vamos a utilizar junto a sus columnas para poder importar el archivo CSV.
-    
+-- 1. Creamos las distintas tablas que vamos a utilizar junto a sus columnas para poder importar el archivo CSV.
+
 -- TABLA: departments
 
 CREATE TABLE departments (
@@ -81,10 +83,11 @@ CREATE TABLE titles (
     FOREIGN KEY (emp_no)
         REFERENCES employees(emp_no)
 );
-
-- 2) Importamos las tablas utilizando "Import/Export Data..." y seleccionando el archivo csv para su tabla correspondiente para cargar sus datos
-
-
-
+    
+-- Realizar:
+        SELECT *
+        FROM employees
+        LIMIT 10;
+-- Para asegurar que la tabla fue cargada correctamente.
 
 
