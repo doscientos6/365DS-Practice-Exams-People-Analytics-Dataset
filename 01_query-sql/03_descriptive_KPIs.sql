@@ -1,3 +1,5 @@
+-- REALIZACIÓN DE LAS PREGUNTAS PARA ENTENDER EL DATASET
+
 -- 1. ¿Cuántos empleados tiene actualmente la empresa?
 SELECT COUNT(*) AS total_employees
 FROM employees;
