@@ -1,6 +1,7 @@
+-- OBJETIVO: Limpieza, validación, exploración de datos con SQL y creación de KPIs del dataset 365DS-Practice-Exams-People-Analytics-Dataset.
 
-
-
+- 1) Creamos las distintas tablas que vamos a utilizar junto a sus columnas para poder importar el archivo CSV.
+    
 -- TABLA: departments
 
 CREATE TABLE departments (
