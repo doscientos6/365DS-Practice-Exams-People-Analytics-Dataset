@@ -81,3 +81,10 @@ CREATE TABLE titles (
     FOREIGN KEY (emp_no)
         REFERENCES employees(emp_no)
 );
+
+- 2) Importamos las tablas utilizando "Import/Export Data..." y seleccionando el archivo csv para su tabla correspondiente para cargar sus datos
+
+
+
+
+
