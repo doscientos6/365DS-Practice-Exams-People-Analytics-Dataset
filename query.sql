@@ -85,7 +85,7 @@ CREATE TABLE titles (
     
 -- Realizar:
         SELECT *
-        FROM employees
+        FROM "La tabla cargada"
         LIMIT 10;
 -- Para asegurar que la tabla fue cargada correctamente.
 
