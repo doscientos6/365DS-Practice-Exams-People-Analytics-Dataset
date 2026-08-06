@@ -1,1 +1,1 @@
-## Realización de preguntas de negocio en base al dataset que descargamos para poder realizar sus respectivos KPIs
+## Realización de preguntas de negocio para poder realizar sus respectivos KPIs
