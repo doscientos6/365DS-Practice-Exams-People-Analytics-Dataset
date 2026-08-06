@@ -89,4 +89,9 @@ CREATE TABLE dept_manager (
         LIMIT 10;
 -- Para asegurar que la tabla fue cargada correctamente.
 
+-- 2.
+
+SELECT *
+FROM departments
+WHERE dept_no IS NULL OR dept_name IS NULL;
 
