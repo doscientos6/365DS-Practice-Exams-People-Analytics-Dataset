@@ -1,4 +1,4 @@
-# Equidad Salarial y compensaciones
+# Equidad Salarial y Compensaciones
 
 ---
 Este proyecto es un análisis de recursos humanos basado en el dataset de 365DS-Practice-Exams-People-Analytics. El objetivo principal de este proyecto es identificar y analisar la equidad salarial y compensaciones en la empresa
