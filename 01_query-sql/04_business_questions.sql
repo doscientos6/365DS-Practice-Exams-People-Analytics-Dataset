@@ -1,41 +1,48 @@
 -- REALIZAMOS PREGUNTAS DE NEGOCIO PARA SOLUCIONAR UN PROBLEMA Y REALIZAMOS SUS KPIS.
 
--- 1. ¿Qué departamento paga mejor?
-SELECT d.dept_name, ROUND(AVG(s.salary)) AS average_salary
-FROM departments d	
-JOIN dept_emp de
-ON d.dept_no = de.dept_no
+--Equidad Salarial e Inequidad Interna (Pay Equity & Bands)
+
+-- 1. ¿Existe dispersión/anomalía salarial dentro del mismo puesto?
+SELECT t.title, COUNT(*) AS total_employees, MIN(s.salary) AS min_salary, MAX(s.salary) AS max_salary, ROUND(AVG(s.salary)) AS average_salary
+FROM titles t
 JOIN salaries s
-ON de.emp_no = s.emp_no
+    ON t.emp_no = s.emp_no
+WHERE t.to_date = '9999-01-01' AND s.to_date = '9999-01-01'
+GROUP BY t.title
+ORDER BY salary_stddev DESC;
+
+-- 2. ¿Cómo impacta la antigüedad en el nivel salarial por departamento?
+WITH employee_tenure AS (
+ SELECT emp_no, DATE_PART('year', AGE(CURRENT_DATE, hire_date)) AS tenure
+ FROM employees
+)
+SELECT d.dept_name, ROUND(AVG(et.tenure)) AS average_tenure, ROUND(AVG(s.salary)) AS average_salary
+FROM employee_tenure et
+
+JOIN dept_emp de
+    ON et.emp_no = de.emp_no
+
+JOIN salaries s
+    ON et.emp_no = s.emp_no
+
+JOIN departments d
+    ON de.dept_no = d.dept_no
 WHERE de.to_date = '9999-01-01' AND s.to_date = '9999-01-01'
 GROUP BY d.dept_name
 ORDER BY average_salary DESC;
 
--- 2. ¿Qué departamento tiene más empleados?
-SELECT d.dept_name, COUNT(*) AS total_employees
-FROM departments d
-JOIN dept_emp de
-ON d.dept_no = de.dept_no
+--3. ¿Cómo se distribuye la masa salarial por departamento en comparación con su dotación?
+WITH department_cost AS (
+ SELECT d.dept_name, COUNT(*) AS headcount, SUM(s.salary) AS payroll
+ FROM departments d
+ JOIN dept_emp de
+	ON d.dept_no = de.dept_no
+ JOIN salaries s
+	ON de.emp_no = s.emp_no
+WHERE de.to_date = '9999-01-01' AND s.to_date = '9999-01-01'
 GROUP BY d.dept_name
-ORDER BY total_employees DESC;
-
--- 3. ¿Qué puestos reciben mejores salarios?
-SELECT t.title, ROUND(AVG(s.salary)) AS average_salary
-FROM titles t
-JOIN salaries s
-ON t.emp_no = s.emp_no
-GROUP BY t.title
-ORDER BY average_salary DESC;
-
--- 4. ¿Qué managers administran más personas?
-SELECT dm.emp_no AS manager_id, CONCAT(e.first_name, ' ', e.last_name) AS manager_name, COUNT(de.emp_no) AS total_employees
-FROM dept_manager dm
-JOIN employees e
-ON dm.emp_no = e.emp_no
-JOIN departments d
-ON dm.dept_no = d.dept_no
-JOIN dept_emp de
-ON dm.dept_no = de.dept_no
-WHERE dm.to_date = '9999-01-01' AND de.to_date = '9999-01-01'
-GROUP BY dm.emp_no, CONCAT(e.first_name, ' ', e.last_name) , d.dept_name
-ORDER BY total_employees DESC;
+)
+  
+SELECT dept_name, headcount, payroll, ROUND(payroll * 100.0 / 2) AS payroll_percentage
+FROM department_cost
+ORDER BY payroll DESC;
