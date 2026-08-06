@@ -1,1 +1,1 @@
-# Pay Equity & Internal Salary Analysis using SQL and Power BI
+# Análisis de equidad salarial y salario interno
