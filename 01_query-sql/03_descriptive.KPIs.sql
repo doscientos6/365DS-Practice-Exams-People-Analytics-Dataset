@@ -26,7 +26,7 @@ GROUP BY d.dept_name
 ORDER BY total_employees DESC;
 
 -- 6. ¿Cuál es la antigüedad promedio de los empleados?
-SELECT  ROUND(AVG(DATE_PART('year', AGE(CURRENT_DATE, hire_date)))::numeric,2) AS average_tenure
+SELECT AVG(DATE_PART('year', AGE(CURRENT_DATE, hire_date))) AS average_tenure
 FROM employees;
 
 -- 7. ¿Cuál es la edad promedio de los empleados?
