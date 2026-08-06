@@ -1,7 +1,7 @@
-# Equidad Salarial e Inequidad Interna
+# Equidad Salarial y compensaciones
 
 ---
-Este proyecto es un análisis de recursos humanos basado en el dataset de 365DS-Practice-Exams-People-Analytics. El objetivo principal de este proyecto es identificar y analisar la equidad salarial e inequidad interna en la empresa
+Este proyecto es un análisis de recursos humanos basado en el dataset de 365DS-Practice-Exams-People-Analytics. El objetivo principal de este proyecto es identificar y analisar la equidad salarial y compensaciones en la empresa
 
 ---
 
