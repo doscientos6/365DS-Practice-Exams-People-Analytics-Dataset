@@ -1,4 +1,3 @@
--- ===================================================
 -- OBJETIVO: Limpieza, validación, exploración de datos con SQL y creación de KPIs del dataset 365DS-Practice-Exams-People-Analytics-Dataset.
 -- ===================================================
 
