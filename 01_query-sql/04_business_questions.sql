@@ -1,6 +1,4 @@
--- REALIZAMOS PREGUNTAS DE NEGOCIO PARA SOLUCIONAR UN PROBLEMA Y REALIZAMOS SUS KPIS.
-
---Equidad Salarial e Inequidad Interna (Pay Equity & Bands)
+-- REALIZAMOS PREGUNTAS DE NEGOCIO Y REALIZAMOS SUS KPIS.
 
 -- 1. ¿Existe dispersión/anomalía salarial dentro del mismo puesto?
 SELECT t.title, COUNT(*) AS total_employees, 
