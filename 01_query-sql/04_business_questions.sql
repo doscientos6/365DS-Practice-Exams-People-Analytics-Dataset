@@ -1,4 +1,4 @@
--- REALIZAMOS PREGUNTAS DE NEGOCIO Y REALIZAMOS SUS KPIS.
+-- REALIZAMOS PREGUNTAS DE NEGOCIO Y REALIZAMOS SUS KPIs.
 
 -- 1. ¿Existe dispersión/anomalía salarial dentro del mismo puesto?
 SELECT t.title, COUNT(*) AS total_employees, 
