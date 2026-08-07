@@ -1,4 +1,4 @@
--- REALIZACIÓN DE LAS PREGUNTAS PARA ENTENDER EL DATASET
+-- REALIZACIÓN DE LAS PREGUNTAS Y SCRIPTS PARA ENTENDER EL DATASET
 
 -- 1. ¿Cuántos empleados tiene actualmente la empresa?
 SELECT COUNT(*) AS total_employees
