@@ -17,7 +17,7 @@ Este proyecto es un análisis de recursos humanos basado en el dataset de 365DS-
 ### Fase 1: Extracción y Preparación (SQL)
 Antes de visualizar, se aseguró la integridad de los datos mediante consultas SQL. 
 * Podés revisar el código completo en el archivo **[queries.sql]**.
-* **Tareas realizadas:** Creación de la estructura de tablas (DDL), validación de valores nulos y redundantes, creación de KPIs descriptivos y de KPIs que permiten responder preguntas de negocio.
+* **Tareas realizadas:** Creación de la estructura de tablas (DDL), validación de valores nulos y redundantes, creación de KPIs descriptivos y de KPIs que permiten responder preguntas de negocio y lograr el objetivo del proyecto
 
 ### Fase 2: Visualización y Dashboard (Power BI)
 Se desarrolló un reporte interactivo enfocado en la experiencia del usuario y la claridad visual.
